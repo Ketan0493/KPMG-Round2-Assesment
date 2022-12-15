@@ -7,7 +7,7 @@ def get_instance_metadata(instance_ids, keys)
         InstanceIds=instance_ids
     )
     ec2_dict = {}
-    Instances = response['Reservations'][1]
+    Instances = response['Reservations']['Instances']
     for i in range(0, len(instance_ids)):
         if keys == []:
             ec2_dict[instance_ids[i]] = Instances[i]
